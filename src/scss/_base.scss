@@ -1,0 +1,72 @@
+$color-primary: #2b2b2b;
+$color-light: rgb(255, 255, 255);
+$color-grad-1: rgba(98, 160, 177, 0.8);
+$color-grad-2: rgba(108, 178, 219, 0.8);
+$color-grad-3: rgba(63, 143, 170, 0.8);
+$color-grad-4: rgba(64, 132, 167, 0.8);
+$color-grad-5: rgba(55, 92, 107, 0.8);
+$color-grad-6: rgba(64, 106, 124, 0.8);
+
+* {
+  padding: 0;
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: linear-gradient($color-grad-1, $color-grad-2),
+    url(/src/img/pexels-photo-281260.jpeg);
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 1rem;
+  height: 100vh;
+}
+
+%bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bg-day {
+  @extend %bg;
+  background-image: linear-gradient($color-grad-3, $color-grad-4),
+    url(/src/img/image-day.jpg);
+}
+.bg-night {
+  @extend %bg;
+  background-image: linear-gradient($color-grad-5, $color-grad-6),
+    url(/src/img/image-night.jfif);
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+a {
+  text-decoration: none;
+  color: $color-light;
+}
+svg {
+  height: 24px;
+  width: 24px;
+  fill: currentColor;
+}
+
+.hidden {
+  display: none;
+}
+
+.my {
+  margin: 0px 1px;
+}

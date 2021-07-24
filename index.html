@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/scss/main.scss" />
+    <script defer src="src/js/controller.js"></script>
+    <title>Weather</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-flex-row">
+          <div class="logo">
+            <h2><a href="#">weather</a></h2>
+          </div>
+
+          <form class="search">
+            <input
+              type="text"
+              class="search__field"
+              placeholder="search weather with city name or postcode"
+            />
+            <button class="btn-location btn-current-location">
+              <svg class="icon-location-gps">
+                <use href="src/img/icons.svg#icon-current-location"></use>
+              </svg>
+            </button>
+
+            <button class="search-btn" type="submit">
+              <svg class="icon-search">
+                <use href="src/img/icons.svg#icon-search"></use>
+              </svg>
+            </button>
+          </form>
+          <div class="switch-conatiner">
+            <button
+              class="btn-switch__metrics btn-switch btn-switch__active"
+              data-tap="metric"
+            >
+              ℃
+            </button>
+            <button class="btn-switch__imperial btn-switch" data-tap="imperial">
+              ℉
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="current-weather">
+      <!-- <div class="container">
+        <div class="current-location__container">
+          <div class="icon-current__location">
+            <svg class="icon-mylocation">
+              <use href="src/img/icons.svg#icon-mylocation"></use>
+            </svg>
+          </div>
+          <div class="location-name">
+            <p class="location-title">London Borough Of Redbridge, London</p>
+          </div>
+        </div>
+        <div class="current-weather__summery">
+          <div class="summery-tempature">
+            <div class="overview-current__weather">
+              <img src="http://openweathermap.org/img/wn/04n@2x.png" alt="" />
+              <span class="tempreture"> 18° </span>
+              <div class="units">
+                <p class="metrics unit-switcher">c</p>
+                <p class="fahrenheit">f</p>
+              </div>
+            </div>
+            <div class="summery-message">
+              <h1 class="forecast-title">Cloudy</h1>
+              <p>Light rain is expected during the day. The high will be 18°</p>
+            </div>
+          </div>
+          <div class="current-weather__details">
+            <div class="detail">
+              <svg class="detail-icon">
+                <use href="src/img/icons.svg#icon-feelslike"></use>
+              </svg>
+              <div class="detailitem-group">
+                <div class="feelike-title">feel like</div>
+                <div class="current-detail__feellikevalue">13°</div>
+              </div>
+            </div>
+            <div class="detail">
+              <svg class="detail-icon">
+                <use href="src/img/icons.svg#icon-wind"></use>
+              </svg>
+              <div class="detailitem-group">
+                <div class="feelike-title">wind</div>
+                <div class="current-detail__feellikevalue">8 mph</div>
+              </div>
+            </div>
+            <div class="detail">
+              <svg class="detail-icon">
+                <use href="src/img/icons.svg#icon-eye"></use>
+              </svg>
+              <div class="detailitem-group">
+                <div class="feelike-title">Visibilty</div>
+                <div class="current-detail__feellikevalue">9.9 mi</div>
+              </div>
+            </div>
+            <div class="detail">
+              <svg class="detail-icon">
+                <use href="src/img/icons.svg#icon-humidity"></use>
+              </svg>
+              <div class="detailitem-group">
+                <div class="feelike-title">humidity</div>
+                <div class="current-detail__feellikevalue">63%</div>
+              </div>
+            </div>
+            <div class="detail">
+              <svg class="detail-icon">
+                <use href="src/img/icons.svg#icon-pressure"></use>
+              </svg>
+              <div class="detailitem-group">
+                <div class="feelike-title">pressure</div>
+                <div class="current-detail__feellikevalue">1021 mb</div>
+              </div>
+            </div>
+            <div class="detail">
+              <svg class="detail-icon">
+                <use href="src/img/icons.svg#icon-dewpoint"></use>
+              </svg>
+              <div class="detailitem-group">
+                <div class="feelike-title">dew point</div>
+                <div class="current-detail__feellikevalue">8°</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </section>
+
+    <section class="forcast">
+      <!-- <div class="container">
+        <div class="title">
+          <p>8 day forcast</p>
+        </div>
+        <div class="forecast-details">
+          <ul class="days-container">
+            <li class="day active-day">
+              <button class="day-card bg-active">
+                <span class="card__group">
+                  <p class="card-header">today</p>
+                  <div class="icon-body">
+                    <img
+                      src="http://openweathermap.org/img/wn/02d@2x.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="footer-high-low">
+                    <p class="temperature">20°</p>
+                    <p class="temperature">17°</p>
+                  </div>
+                </span>
+              </button>
+            </li>
+            <li class="day">
+              <button class="day-card">
+                <span class="card__group">
+                  <p class="card-header">Fri 25</p>
+                  <div class="icon-body">
+                    <img
+                      src="http://openweathermap.org/img/wn/02d@2x.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="footer-high-low">
+                    <p class="temperature">20°</p>
+                    <p class="temperature">17°</p>
+                  </div>
+                </span>
+              </button>
+            </li>
+            <li class="day">
+              <button class="day-card">
+                <span class="card__group">
+                  <p class="card-header">Sat 26</p>
+                  <div class="icon-body">
+                    <img
+                      src="http://openweathermap.org/img/wn/02d@2x.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="footer-high-low">
+                    <p class="temperature">20°</p>
+                    <p class="temperature">17°</p>
+                  </div>
+                </span>
+              </button>
+            </li>
+            <li class="day">
+              <button class="day-card">
+                <span class="card__group">
+                  <p class="card-header">Sun 27</p>
+                  <div class="icon-body">
+                    <img
+                      src="http://openweathermap.org/img/wn/02d@2x.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="footer-high-low">
+                    <p class="temperature">20°</p>
+                    <p class="temperature">17°</p>
+                  </div>
+                </span>
+              </button>
+            </li>
+            <li class="day">
+              <button class="day-card">
+                <span class="card__group">
+                  <p class="card-header">Mon 28</p>
+                  <div class="icon-body">
+                    <img
+                      src="http://openweathermap.org/img/wn/02d@2x.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="footer-high-low">
+                    <p class="temperature">20°</p>
+                    <p class="temperature">17°</p>
+                  </div>
+                </span>
+              </button>
+            </li>
+            <li class="day">
+              <button class="day-card">
+                <span class="card__group">
+                  <p class="card-header">Tue 29</p>
+                  <div class="icon-body">
+                    <img
+                      src="http://openweathermap.org/img/wn/02d@2x.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="footer-high-low">
+                    <p class="temperature">20°</p>
+                    <p class="temperature">17°</p>
+                  </div>
+                </span>
+              </button>
+            </li>
+            <li class="day">
+              <button class="day-card">
+                <span class="card__group">
+                  <p class="card-header">today</p>
+                  <div class="icon-body">
+                    <img
+                      src="http://openweathermap.org/img/wn/02d@2x.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="footer-high-low">
+                    <p class="temperature">20°</p>
+                    <p class="temperature">17°</p>
+                  </div>
+                </span>
+              </button>
+            </li>
+            <li class="day">
+              <button class="day-card">
+                <span class="card__group">
+                  <p class="card-header">today</p>
+                  <div class="icon-body">
+                    <img
+                      src="http://openweathermap.org/img/wn/02d@2x.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="footer-high-low">
+                    <p class="temperature">20°</p>
+                    <p class="temperature">17°</p>
+                  </div>
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div> -->
+    </section>
+    <section class="hourly-forecast">
+      <div class="container">
+        <div class="hourly-forecast__container">
+          <!-- <button class="slider__btn slider__btn--left hidden">
+            <svg class="icon-chevron">
+              <use href="src/img/icons.svg#icon-chevron-left"></use>
+            </svg>
+          </button>
+          <div class="visible-section">
+            <div class="overflow-hidden">
+              <ul class="card-container" data-start="0"> -->
+          <!-- <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li>
+                <li class="card-item">
+                  <a class="card-items">
+                    <p class="header-card-item">18:00</p>
+                    <div class="icon-card-item">
+                      <img
+                        src="http://openweathermap.org/img/wn/02d@2x.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="title-Ds-item">sunny</div>
+                    <div class="temp-card-item">20°</div>
+                  </a>
+                </li> -->
+          <!-- </ul>
+            </div>
+          </div>
+          <button class="slider__btn slider__btn--right hidden">
+            <svg class="icon-chevron">
+              <use href="src/img/icons.svg#icon-chevron-right"></use>
+            </svg>
+          </button> -->
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+.current-weather {
+  text-align: center;
+  color: $color-light;
+  & .current-location__container {
+    display: flex;
+    padding: 1rem;
+    text-transform: uppercase;
+    & .icon-current__location {
+      margin-right: 1rem;
+      text-align: center;
+      & .icon-mylocation {
+        height: 1.5rem;
+        width: 1.5rem;
+        fill: $color-light;
+      }
+    }
+    & .location-title {
+      font-size: 1rem;
+      color: $color-light;
+    }
+  }
+  & .current-weather__summery {
+    display: grid;
+    grid-column-gap: 10px;
+
+    & .summery-tempature {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      & .overview-current__weather {
+        display: inline-flex;
+        line-height: 106px;
+        font-size: 106px;
+        text-align: center;
+
+        & span {
+          text-shadow: 1px 1px 2px;
+          color: $color-light;
+          text-transform: uppercase;
+          padding: 0rem 0.8rem;
+        }
+
+        & img {
+          width: 120px;
+          height: 120px;
+        }
+        & .units {
+          padding: 14px 10px 0 10px;
+          & p {
+            font-size: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            font-weight: bold;
+            margin: 0;
+            text-align: center;
+            padding: 0px;
+            cursor: pointer;
+            text-transform: uppercase;
+          }
+
+          & .unit-switcher {
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+            font-weight: normal;
+            margin: 0;
+            text-align: center;
+            padding: 0px;
+          }
+        }
+      }
+
+      & .summery-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        & h1 {
+          color: $color-light;
+          line-height: 1rem;
+          font-size: 2rem;
+          padding-bottom: 2rem;
+          text-transform: uppercase;
+          text-align: center;
+          font-style: bold;
+        }
+        & p {
+          color: $color-light;
+          font-size: 1.1rem;
+          line-height: 0.5rem;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
+
+.current-weather__details {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: 0.75rem;
+  grid-gap: 0.7rem;
+  & .detail {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    & .detail-icon {
+      align-self: center;
+      margin-right: 9px;
+      opacity: 0.5;
+    }
+    & .detailitem-group {
+      display: inline-flex;
+      flex-direction: column;
+
+      & :first-child {
+        text-align: center;
+        text-transform: uppercase;
+        opacity: 0.8;
+        font-size: 1rem;
+        line-height: 1.1rem;
+        font-weight: normal;
+      }
+      & :last-child {
+        text-align: left;
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+        font-weight: normal;
+      }
+    }
+  }
+}

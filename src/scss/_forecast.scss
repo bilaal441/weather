@@ -1,0 +1,90 @@
+.forcast {
+  padding: 2rem 0;
+
+  & .title {
+    padding-left: 1.2rem;
+
+    & p {
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      padding-top: 0.5rem;
+      line-height: 1.4rem;
+    }
+  }
+  & .forecast-details {
+    margin-top: 0.5rem;
+    color: $color-light;
+
+    & .days-container {
+      list-style: none;
+      white-space: nowrap;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+
+      & .day {
+        width: 8rem;
+        display: inline-block;
+        cursor: pointer;
+        &.active-day::after {
+          content: "";
+          display: block;
+          position: relative;
+          border-style: solid;
+          border-width: 0.38rem 0.76rem 0.38rem 0.76rem;
+          left: 50%;
+          margin-left: -1.01rem;
+          border-color: rgba($color-light, 0.08) transparent transparent
+            transparent;
+          width: 0;
+        }
+
+        & .day-card {
+          border: none;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          outline: none;
+          border-radius: 13px;
+          height: 9.75rem;
+          background: rgba($color-light, 0.02);
+          cursor: pointer;
+          color: $color-light;
+          width: inherit;
+          padding: 0;
+          &.bg-active {
+            background: rgba($color: $color-light, $alpha: 0.08);
+          }
+
+          & .card-header {
+            margin-top: 0.7rem;
+            font-size: 1rem;
+            line-height: 1.2rem;
+            text-transform: uppercase;
+            color: rgba($color-light, 0.7);
+          }
+          & .icon-body {
+            width: 3rem;
+            height: 3rem;
+            & img {
+              width: 100%;
+            }
+          }
+          & .footer-high-low {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            & .temperature {
+              margin-top: 0.4rem;
+              color: $color-light;
+              font-size: 1.5rem;
+            }
+            & :last-child {
+              color: rgba($color-light, 0.8);
+            }
+          }
+        }
+      }
+    }
+  }
+}
