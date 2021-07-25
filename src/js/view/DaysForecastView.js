@@ -1,4 +1,4 @@
-import View from './view.js';
+import View from './View.js';
 
 class DaysForecastView extends View {
   _parentElement = document.querySelector('.forcast');
