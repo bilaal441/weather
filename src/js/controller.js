@@ -10,13 +10,27 @@ import SearchView from './view/SearchView.js';
 const controlCurrentWeather = async function () {
   try {
     const unitActive = SearchView.getUnit();
-    if (this) {
-      const query = SearchView.getQuery();
-      if (!query) return;
-      model.state.coards = await model.searchLocation(query);
-    } else {
-      model.state.coards = await model.loadpostion();
-    }
+    model.state.coards = await model.loadpostion();
+
+    await model.loadWData(model.state.coards, unitActive);
+    CurrentView.showBackground(model.state.currentWeather);
+    CurrentView.render(model.state.currentWeather);
+    DaysForecastView.render(model.state.dailyForecast);
+    model.getHourlyPerDay('today');
+    DaysForecastView.addActivetap(model.getActiveDayBg(model.state.active));
+    hourlyView.render(model.state.active);
+    hourlyView.addhendlerGlider();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const controlSearch = async function () {
+  try {
+    const unitActive = SearchView.getUnit();
+    const query = SearchView.getQuery();
+    if (!query) return;
+    model.state.coards = await model.searchLocation(query);
     await model.loadWData(model.state.coards, unitActive);
     CurrentView.showBackground(model.state.currentWeather);
     CurrentView.render(model.state.currentWeather);
@@ -63,9 +77,9 @@ const controlSwitchTemp = async function (unit) {
 };
 
 const innit = function () {
-  CurrentView.addHandlerRender(controlCurrentWeather.bind(false));
-  SearchView.addHandlerSearch(controlCurrentWeather.bind(true));
-  SearchView.addhandlerloadCurrentLocation(controlCurrentWeather.bind(false));
+  CurrentView.addHandlerRender(controlCurrentWeather);
+  SearchView.addHandlerSearch(controlSearch);
+  SearchView.addhandlerloadCurrentLocation(controlCurrentWeather);
   DaysForecastView.Addhandllerclick(dayClicked);
   SwitchView.addHandlerSwitch(controlSwitchTemp);
 };
