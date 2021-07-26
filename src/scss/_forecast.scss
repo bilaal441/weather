@@ -16,6 +16,16 @@
     color: $color-light;
 
     & .days-container {
+      @include table {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @include mobile {
+        grid-template-columns: repeat(3, 1fr);
+
+        & > li:nth-last-of-type(-n + 2) {
+          display: none;
+        }
+      }
       list-style: none;
       white-space: nowrap;
       display: grid;
@@ -25,8 +35,9 @@
         width: 8rem;
         display: inline-block;
         cursor: pointer;
+
         &.active-day::after {
-          content: "";
+          content: '';
           display: block;
           position: relative;
           border-style: solid;

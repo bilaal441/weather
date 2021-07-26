@@ -26,7 +26,19 @@
     & .summery-tempature {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
       & .overview-current__weather {
+        @include mobile {
+          line-height: 90px;
+          font-size: 90px;
+          margin-bottom: 1rem;
+        }
         display: inline-flex;
         line-height: 106px;
         font-size: 106px;
@@ -69,12 +81,21 @@
       }
 
       & .summery-message {
+        @include mobile {
+          margin-bottom: 2rem;
+          justify-content: space-between;
+        }
+
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
 
         & h1 {
+          @include mobile {
+            font-size: 1.7rem;
+            line-height: normal;
+          }
           color: $color-light;
           line-height: 1rem;
           font-size: 2rem;
@@ -95,6 +116,14 @@
 }
 
 .current-weather__details {
+  @include table {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
   display: grid;
   text-align: center;
   grid-template-columns: repeat(6, 1fr);

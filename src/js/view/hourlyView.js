@@ -15,6 +15,14 @@ class HourlyView extends View {
       startAt: 0,
       perView: 11,
       bound: true,
+      breakpoints: {
+        990: {
+          perView: 7,
+        },
+        680: {
+          perView: 4,
+        },
+      },
     };
 
     new Glider('.glide', config).mount({ Controls, Breakpoints });
