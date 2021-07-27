@@ -44,8 +44,9 @@ form button {
 
     & form {
       @include mobile {
-        width: 82%;
         margin: 0rem 1rem;
+        position: relative;
+        width: 75%;
       }
       text-align: center;
       position: relative;
@@ -55,7 +56,7 @@ form button {
 
       & .search__field {
         @include mobile {
-          width: 90%;
+          width: 100%;
           margin-bottom: 13px;
         }
         width: 90%;
