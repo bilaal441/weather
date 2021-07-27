@@ -79,6 +79,7 @@ form button {
         @include mobile {
           right: -2rem;
           padding: 0.4rem 0.6rem;
+          display: none;
         }
         background: #f3f1f1;
         padding: 0.5rem 0.8rem;
@@ -89,6 +90,9 @@ form button {
         right: -1rem;
       }
       & .btn-location {
+        @include mobile {
+          display: none;
+        }
         background-color: $color-light;
         cursor: pointer;
         border: none;
