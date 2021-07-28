@@ -199,7 +199,8 @@ form button {
 
 @media only screen and (max-width: 990px) {
   .header-flex-row form .search-btn {
-    right: -1rem;
+    right: -3rem;
+    padding: 0.6rem 0.8rem;
   }
 }
 

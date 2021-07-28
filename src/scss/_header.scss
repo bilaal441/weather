@@ -77,7 +77,8 @@ form button {
 
       & .search-btn {
         @include table {
-          right: -1rem;
+          right: -3rem;
+          padding: 0.6rem 0.8rem;
         }
 
         background: #f3f1f1;
