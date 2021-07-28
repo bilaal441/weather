@@ -18,9 +18,11 @@ class HourlyView extends View {
       breakpoints: {
         990: {
           perView: 7,
+          bound: true,
         },
         680: {
           perView: 4,
+          bound: true,
         },
       },
     };
