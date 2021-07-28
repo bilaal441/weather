@@ -41,7 +41,7 @@ class HourlyView extends View {
           <p class="header-card-item">${hour.time}</p>
           <div class="icon-card-item">
             <img
-              src="http://openweathermap.org/img/wn/${
+              src="https://openweathermap.org/img/wn/${
                 hour.weather[0].icon
               }@2x.png"
               alt=""

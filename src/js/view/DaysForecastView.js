@@ -41,7 +41,7 @@ class DaysForecastView extends View {
                   <p class="card-header">${day.date}</p>
                    <div class="icon-body">
                     <img
-                      src="http://openweathermap.org/img/wn/${
+                      src="https://openweathermap.org/img/wn/${
                         day.weather[0].icon
                       }@2x.png"
                       alt=""

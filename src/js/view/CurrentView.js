@@ -46,7 +46,7 @@ class CurrentWeatherView extends View {
       <div class="summery-tempature">
         <div class="overview-current__weather">
         
-          <img src="http://openweathermap.org/img/wn/${
+          <img src="https://openweathermap.org/img/wn/${
             this._data.weather[0].icon
           }@2x.png" alt="" />
           <span class="tempreture"> ${this._data.temp.toFixed(0)}° </span>
