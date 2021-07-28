@@ -76,11 +76,8 @@ form button {
       }
 
       & .search-btn {
-        @include mobile {
-          right: -3rem;
-        }
         @include table {
-          right: -2rem;
+          right: -1%;
         }
 
         background: #f3f1f1;
