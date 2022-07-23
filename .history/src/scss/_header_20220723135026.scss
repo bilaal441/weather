@@ -1,0 +1,122 @@
+@import 'media-queries';
+
+.header {
+  position: sticky;
+  color: #fff;
+  top: 0;
+  padding: 0.5rem 0.3rem;
+
+  z-index: 100;
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1));
+    opacity: 0.4;
+    z-index: -1;
+  }
+
+  &-flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+
+    & .logo {
+      @include mobile {
+        margin-bottom: 1rem;
+      }
+      outline: none;
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 1.2rem;
+      text-shadow: 0.3px 1px 0.5px;
+    }
+
+    & .switch-conatiner {
+      @include mobile {
+        position: absolute;
+        left: 70%;
+      }
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-evenly;
+      background: rgba($color-light, 0.1);
+      text-align: center;
+
+      border-radius: 10px;
+
+      & .btn-switch {
+        font-size: 1.3rem;
+        border: none;
+        background: transparent;
+        outline: none;
+        cursor: pointer;
+        color: #fff;
+        padding: 0.2rem 0.5rem;
+        width: 32px;
+        height: 32px;
+      }
+      & .btn-switch__active {
+        background: rgba($color-light, 0.1);
+        border-radius: 10px;
+        cursor: text;
+      }
+    }
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: start;
+    }
+  }
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  max-width: 31.25rem;
+  margin: 0 auto;
+
+  & .search__field {
+    outline: none;
+    border: none;
+    color: $color-primary;
+    font-size: 1.2rem;
+    width: 100%;
+    margin: 0 0.5rem;
+
+    &::placeholder {
+      font-size: 14px;
+      @include mobile {
+        font-size: 13px;
+      }
+    }
+  }
+
+  & .search-btn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+  & .btn-location {
+    background-color: $color-light;
+    cursor: pointer;
+    border: none;
+
+    outline: none;
+  }gi
+  & .icon-location-gps,
+  .icon-search {
+    height: 1.7rem;
+    width: 1.7rem;
+    fill: rgba(0, 0, 0, 0.4);
+  }
+}
