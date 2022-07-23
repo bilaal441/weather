@@ -16,7 +16,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="src/scss/main.scss" />
-    <script defer src="src/js/controller.js" type="module"></script>
+    <script defer src="src/js/controller.js"></script>
     <title>Weather</title>
   </head>
   <body>
@@ -41,27 +41,33 @@
       </div>
     </header>
 
-    <section class="searching">
-      <div class="container">
-        <form class="search">
-          <button class="btn-location btn-current-location">
-            <svg class="icon-location-gps">
-              <use href="src/img/icons.svg#icon-current-location"></use>
-            </svg>
-          </button>
-          <input
-            type="text"
-            class="search__field"
-            placeholder="search weather with city name"
-          />
 
-          <button class="search-btn" type="submit">
-            <svg class="icon-search">
-              <use href="src/img/icons.svg#icon-search"></use>
-            </svg>
-          </button>
-        </form>
-      </div>
+
+
+
+    <section>
+
+      <form class="search">
+        <input
+          type="text"
+          class="search__field"
+          placeholder="search weather with city name"
+        />
+        <button class="btn-location btn-current-location">
+          <svg class="icon-location-gps">
+            <use href="src/img/icons.svg#icon-current-location"></use>
+          </svg>
+        </button>
+
+        <button class="search-btn" type="submit">
+          <svg class="icon-search">
+            <use href="src/img/icons.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+
+
+
     </section>
     <section class="current-weather">
       <!-- <div class="container">
